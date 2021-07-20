@@ -2,7 +2,7 @@ package users
 
 import (
 	"sync"
-	"crypto/bcrypt"
+	"golang.org/x/crypto/bcrypt"
 )
 //Stire us vert sunoke ub nenirt databasem that we'll use to store our users.
 //It is protected by a read-write mutex, so that tow goroutines can;t moify it
