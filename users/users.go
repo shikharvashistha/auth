@@ -7,20 +7,19 @@ import (
 //Stire us vert sunoke ub nenirt databasem that we'll use to store our users.
 //It is protected by a read-write mutex, so that tow goroutines can;t moify it
 //The underlying map at the same time(since maps are not safe for concurrent use in GO)
-type Store struct {
+type Store struct{
 	rwm *sync.RWMutex
 	m map[string]string//map protected by a read-write mutex
 	//They are not safe for concurrent use so we protect them
 }
 
 //newDB is a convenience method to initalize our in memory DB when our program starts.
-func newDB() *Store{
+func newDB() *Store {
 	return &Store{
 		rwm: &sync.RWMutex{},
-		m:   make(map[string]string),
+		m: make(map[string]string),
 	}
 }
-
 //New USer accepts a username and password and creates a new user in our DB
 
 func NewUser(username string, password string) error{

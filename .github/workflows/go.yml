@@ -26,13 +26,11 @@ jobs:
           go-version: '${{ matrix.go-version }}'
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: go get golang.org/x/crypto/bcrypt
       - name: Verification
         run: go mod verify
       - name: Run
-        working-directory: src/users/cmd/
+        working-directory: users/cmd/
         run: go run main.go
       - name: Build
-        working-directory: src/users/cmd/
+        working-directory: users/cmd/
         run: go build main.go
