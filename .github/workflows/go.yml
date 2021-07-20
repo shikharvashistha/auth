@@ -28,9 +28,9 @@ jobs:
         uses: actions/checkout@v2
       - name: Verification
         run: go mod verify
-      - name: Run
-        working-directory: users/cmd/
-        run: go run main.go
+      #- name: Run
+      #  working-directory: users/cmd/
+     #   run: go run main.go
       - name: Build
         working-directory: users/cmd/
         run: go build main.go
