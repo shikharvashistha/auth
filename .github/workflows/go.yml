@@ -29,7 +29,6 @@ jobs:
       - name: Install Dependencies
         run: go get golang.org/x/crypto/bcrypt
       - name: Verification
-        working-directory: src/cmd/
         run: go mod verify
       - name: Run
         working-directory: src/cmd/
